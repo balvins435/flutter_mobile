@@ -4,7 +4,7 @@ part 'auth_models.freezed.dart';
 part 'auth_models.g.dart';
 
 @freezed
-class SessionTokens with _$SessionTokens {
+abstract class SessionTokens with _$SessionTokens {
   const factory SessionTokens({
     required String access,
     required String refresh,
@@ -14,7 +14,7 @@ class SessionTokens with _$SessionTokens {
 }
 
 @freezed
-class UserProfile with _$UserProfile {
+abstract class UserProfile with _$UserProfile {
   const factory UserProfile({
     required int id,
     required String email,
@@ -30,7 +30,7 @@ class UserProfile with _$UserProfile {
 }
 
 @freezed
-class AuthState with _$AuthState {
+abstract class AuthState with _$AuthState {
   const factory AuthState.unauthenticated() = _Unauthenticated;
   const factory AuthState.authenticated({required UserProfile user}) = _Authenticated;
 }

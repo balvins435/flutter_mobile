@@ -4,7 +4,7 @@ part 'expense_models.freezed.dart';
 part 'expense_models.g.dart';
 
 @freezed
-class Expense with _$Expense {
+abstract class Expense with _$Expense {
   const factory Expense({
     int? id,
     int? business,

@@ -4,7 +4,7 @@ part 'tax_models.freezed.dart';
 part 'tax_models.g.dart';
 
 @freezed
-class TaxSubmission with _$TaxSubmission {
+abstract class TaxSubmission with _$TaxSubmission {
   const factory TaxSubmission({
     required int id,
     @JsonKey(name: 'invoice_number') String? invoiceNumber,

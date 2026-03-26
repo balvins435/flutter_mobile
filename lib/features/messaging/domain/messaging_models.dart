@@ -4,7 +4,7 @@ part 'messaging_models.freezed.dart';
 part 'messaging_models.g.dart';
 
 @freezed
-class WhatsAppMessage with _$WhatsAppMessage {
+abstract class WhatsAppMessage with _$WhatsAppMessage {
   const factory WhatsAppMessage({
     required int id,
     @JsonKey(name: 'invoice_number') String? invoiceNumber,

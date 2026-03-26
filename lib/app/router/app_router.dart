@@ -31,7 +31,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       if (loading && location != '/splash') return '/splash';
 
       final authState = auth.valueOrNull;
-      final isAuthenticated = authState is AuthStateAuthenticated;
+      final isAuthenticated = authState?.mapOrNull(authenticated: (_) => true) ?? false;
       final activeBusiness = business.valueOrNull?.activeBusiness;
 
       if (!isAuthenticated) {

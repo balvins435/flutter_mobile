@@ -4,7 +4,7 @@ part 'report_models.freezed.dart';
 part 'report_models.g.dart';
 
 @freezed
-class MonthlyReportItem with _$MonthlyReportItem {
+abstract class MonthlyReportItem with _$MonthlyReportItem {
   const factory MonthlyReportItem({
     int? month,
     int? year,

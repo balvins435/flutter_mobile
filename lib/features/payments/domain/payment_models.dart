@@ -4,7 +4,7 @@ part 'payment_models.freezed.dart';
 part 'payment_models.g.dart';
 
 @freezed
-class PaymentTransaction with _$PaymentTransaction {
+abstract class PaymentTransaction with _$PaymentTransaction {
   const factory PaymentTransaction({
     required int id,
     @JsonKey(name: 'invoice_number') String? invoiceNumber,

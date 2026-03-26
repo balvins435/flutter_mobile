@@ -7,7 +7,7 @@ part 'dashboard_models.freezed.dart';
 part 'dashboard_models.g.dart';
 
 @freezed
-class DashboardTrendPoint with _$DashboardTrendPoint {
+abstract class DashboardTrendPoint with _$DashboardTrendPoint {
   const factory DashboardTrendPoint({
     int? month,
     int? year,
@@ -20,7 +20,7 @@ class DashboardTrendPoint with _$DashboardTrendPoint {
 }
 
 @freezed
-class DashboardStats with _$DashboardStats {
+abstract class DashboardStats with _$DashboardStats {
   const factory DashboardStats({
     @JsonKey(name: 'total_income') @Default(0) double totalIncome,
     @JsonKey(name: 'total_expenses') @Default(0) double totalExpenses,

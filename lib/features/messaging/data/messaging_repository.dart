@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../core/network/api_client.dart';

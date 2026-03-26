@@ -4,7 +4,7 @@ part 'business_models.freezed.dart';
 part 'business_models.g.dart';
 
 @freezed
-class Business with _$Business {
+abstract class Business with _$Business {
   const factory Business({
     required int id,
     @JsonKey(name: 'business_name') required String businessName,

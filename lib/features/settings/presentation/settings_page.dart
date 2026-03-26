@@ -12,7 +12,7 @@ class SettingsPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(authControllerProvider).valueOrNull;
-    final user = auth is AuthStateAuthenticated ? auth.user : null;
+    final user = auth?.mapOrNull(authenticated: (value) => value.user);
     return AppPage(
       title: 'Settings',
       child: ListView(

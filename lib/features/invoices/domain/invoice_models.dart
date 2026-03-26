@@ -4,7 +4,7 @@ part 'invoice_models.freezed.dart';
 part 'invoice_models.g.dart';
 
 @freezed
-class InvoiceItem with _$InvoiceItem {
+abstract class InvoiceItem with _$InvoiceItem {
   const factory InvoiceItem({
     int? id,
     @Default('') String description,
@@ -17,7 +17,7 @@ class InvoiceItem with _$InvoiceItem {
 }
 
 @freezed
-class Invoice with _$Invoice {
+abstract class Invoice with _$Invoice {
   const factory Invoice({
     int? id,
     @JsonKey(name: 'business_id') int? businessId,

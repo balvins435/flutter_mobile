@@ -69,7 +69,7 @@ class AppDatabase extends _$AppDatabase {
   Future<void> cacheDashboard(int businessId, Map<String, dynamic> payload) {
     return into(dashboardCaches).insertOnConflictUpdate(
       DashboardCachesCompanion.insert(
-        businessId: businessId,
+        businessId: Value(businessId),
         payload: jsonEncode(payload),
         syncedAt: DateTime.now(),
       ),
