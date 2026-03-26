@@ -78,7 +78,9 @@ class AuthRepository {
     if (refresh != null) {
       try {
         await _apiClient.dio.post('/logout/', data: {'refresh': refresh});
-      } on DioException {}
+      } on DioException {
+        // Logout should still clear local session if the backend call fails.
+      }
     }
     await _secureStorage.clearSession();
   }

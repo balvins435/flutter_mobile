@@ -25,7 +25,7 @@ class BusinessSelectorPage extends ConsumerWidget {
           }
           return ListView.separated(
             itemCount: data.businesses.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 12),
+            separatorBuilder: (_, _) => const SizedBox(height: 12),
             itemBuilder: (context, index) {
               final business = data.businesses[index];
               return SectionCard(

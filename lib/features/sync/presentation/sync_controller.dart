@@ -8,7 +8,7 @@ class SyncController extends AsyncNotifier<List<String>> {
   @override
   Future<List<String>> build() async {
     final outbox = await ref.read(appDatabaseProvider).pendingOutbox();
-    return outbox.map((item) => item.feature + ':' + item.operation + ':' + item.syncState).toList();
+    return outbox.map((item) => '${item.feature}:${item.operation}:${item.syncState}').toList();
   }
 
   Future<void> processQueue() async {
@@ -28,14 +28,14 @@ class SyncController extends AsyncNotifier<List<String>> {
             await api.post('/expenses/', data: payload);
           } else {
             await db.markOutboxStatus(entry.id, 'failed', errorMessage: 'Queued update handling is not implemented yet.');
-            results.add(entry.feature + ':' + entry.operation + ':failed');
+            results.add('${entry.feature}:${entry.operation}:failed');
             continue;
           }
           await db.markOutboxStatus(entry.id, 'synced');
-          results.add(entry.feature + ':' + entry.operation + ':synced');
+          results.add('${entry.feature}:${entry.operation}:synced');
         } catch (error) {
           await db.markOutboxStatus(entry.id, 'failed', errorMessage: error.toString());
-          results.add(entry.feature + ':' + entry.operation + ':failed');
+          results.add('${entry.feature}:${entry.operation}:failed');
         }
       }
       return results;
